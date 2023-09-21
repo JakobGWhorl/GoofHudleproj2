@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\JobApplication;
 class JobController extends Controller
 {
-    //
+    public function showForm(){
+        return view('showApplicationTable');
+    }
 }
