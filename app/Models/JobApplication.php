@@ -2,31 +2,20 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-return new class extends Migration
+class JobApplication extends Model
 {
+    use HasFactory;
 
-    public function up(): void
-    {
-        Schema::create('job_applications', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('email');
-            $table->string('address');
-            $table->string('education');
-            $table->decimal('years_of_exp');
-            $table->string('other') ;
-        });
-    }
-
-
-    public function down(): void
-    {
-        Schema::dropIfExists('job_applications');
-    }
-};
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'email',
+        'address',
+        'education',
+        'years_of_exp',
+        'other',
+    ];
+}
