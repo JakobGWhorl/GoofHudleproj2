@@ -52,7 +52,7 @@
                 <br>
                 <input type="text"name="Other">
                 <br><br>
-                <button>Submit</button>
+                <button>Enter</button>
             </form>
 
         </div>
