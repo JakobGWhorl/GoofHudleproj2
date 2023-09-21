@@ -14,8 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('applicationForm');
-});
-Route::get('/showApplicationTable', function () {
-    return view('showApplicationTable');
+    return view('welcome');
 });
