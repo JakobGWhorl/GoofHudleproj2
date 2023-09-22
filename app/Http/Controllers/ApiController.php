@@ -21,16 +21,7 @@ class ApiController extends Controller
     public function store(Request $request)
     {
         function store(Request $request){
-            $request -> validate([
-                'first_name'=>'required',
-                'last_name'=> 'required',
-                'email'=> 'required',
-                'address'=> 'required',
-                'education'=> 'required',
-                'years_of_exp'=> 'required',
-             ]);
-            $product = $request->all();
-             JobApplication::create($product);
+            
           }
     
     }

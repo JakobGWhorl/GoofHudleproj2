@@ -12,9 +12,19 @@ class JobController extends Controller
       public function showTable(){
         return view('showApplicationTable');
       }
-      public function show()
+      public function show(Request $request)
       {
-          $data = JobApplication::all();
+          $request -> validate([
+            'first_name'=>'required',
+            'last_name'=> 'required',
+            'email'=> 'required',
+            'address'=> 'required',
+            'education'=> 'required',
+            'years_of_exp'=> 'required',
+         ]);
+        $product = $request->all();
+         JobApplication::create($product);
+         $data = JobApplication::all();
           return view('showApplicationTable',['a'=>$data]);;
       }
 }

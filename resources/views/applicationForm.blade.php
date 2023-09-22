@@ -9,7 +9,9 @@
             @csrf
             <?php $id = rand(0,999) ?>
                 <label for="first_name">First Name:</label>
+                <br>
                 <input type="text"name="first_name">
+                <br><br>
                 <label for="last_name">Last Name:</label>
                 <br>
                 <input type="text"name="last_name">
