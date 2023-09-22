@@ -20,16 +20,25 @@ class ApiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        function store(Request $request){
+            $request -> validate([
+                'first_name'=>'required',
+                'last_name'=> 'required',
+                'email'=> 'required',
+                'address'=> 'required',
+                'education'=> 'required',
+                'years_of_exp'=> 'required',
+             ]);
+            $product = $request->all();
+             JobApplication::create($product);
+          }
+    
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        //
-    }
+   
 
     /**
      * Update the specified resource in storage.
@@ -46,4 +55,12 @@ class ApiController extends Controller
     {
         //
     }
+    function check(Request $request, $id){
+        $id=JobApplication::where('id', $request-> id);
+            foreach($id as $JobApplication){
+                if($id == $id ){
+                    return view('showApplicationTable');
+                }
+            }
+      }
 }
