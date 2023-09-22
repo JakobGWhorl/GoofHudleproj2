@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('applicationForm');
-});
-Route::get('/showApplicationTable', function () {
-    return view('showApplicationTable');
-});
+Route::get('/', [JobController::class, 'showForm']);
+Route::get('/showTable', [JobController::class, 'showTable']);
+
+
+Route::get('/show',[JobController::class,"show"]);

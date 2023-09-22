@@ -5,7 +5,9 @@
     <body class="antialiased">
         <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
 
-            <form action=""method="post">
+            <form action={{ url('/show')}} method="get">
+            @csrf
+            <?php $id = rand(0,999) ?>
                 <label for="first_name">First Name:</label>
                 <input type="text"name="first_name">
                 <label for="last_name">Last Name:</label>
@@ -33,10 +35,12 @@
                 <br><br>
                 <label for="other">Other:</label>
                 <br>
-                <input type="text"name="Other">
+                <input type="text"name="other">
                 <br><br>
                 <button>Enter</button>
             </form>
+
+            <form action=""></form>
 
         </div>
     </body>
